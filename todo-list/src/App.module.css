@@ -4,44 +4,102 @@ body {
 
 p {
 	margin: 0;
-	white-space: nowrap;
+}
+
+button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	border: 1px solid #4e4e4e;
+	border-radius: 4px;
+	padding: 0;
+	margin: 0;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	transition: 100ms;
+	font-size: 18px;
+}
+
+.createButton,
+.searchButton,
+.sortButton {
+	width: 55px;
+	height: 55px;
+	border-radius: 20%;
+	background-color: #fda642;
+}
+
+.createButton {
+	font-size: 33px;
+}
+
+.sortButton {
+	font-size: 25px;
+}
+
+button:active {
+	border: none;
+}
+
+.updateButton:hover {
+	background-color: #74b7ee;
+}
+
+.deleteButton:hover {
+	background-color: #ff5050;
+}
+
+.createButton:hover,
+.searchButton:hover,
+.sortButton:hover {
+	background-color: #5fdd65;
+}
+
+.mainBtnBox {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 30px;
 }
 
 .app {
-	width:fit-content;
+	width: fit-content;
+	min-width: 700px;
+	min-height: calc(100vh - 90px);
 	margin: 20px auto;
 	background-color: #cabf98;
 	border: 1px solid #a89c74;
-	padding-block: 20px;
+	padding: 20px 30px;
 }
 
 .title {
 	text-align: center;
-	margin-block: 10px;
+	margin: 10px 0 30px;
 }
 
 .todo-list {
 	list-style-type: none;
-	padding-inline: 30px;
+	padding: 0;
 	margin: 0;
 }
 
 .todo-item {
+	position: relative;
 	font-size: 1.1em;
 	border-bottom: 1px solid #a89c74;
 	margin-bottom: 3px;
 	padding-bottom: 3px;
 	display: flex;
 	justify-content: space-between;
-	gap: 50px;
 }
 
-.green {
-	color: #027a02;
-}
-
-.red {
-	color: #c90101;
+.btnBox {
+	position: absolute;
+	right: 0;
+	display: flex;
+	gap: 5px;
 }
 
 .loader {
@@ -50,7 +108,7 @@ p {
 	left: 49%;
 	width: 50px;
 	height: 50px;
-	border:10px solid #998c5f;
+	border: 10px solid #998c5f;
 	border-right-color: transparent;
 	border-radius: 50%;
 	animation: loader 1s infinite;
@@ -60,6 +118,7 @@ p {
 	0% {
 		transform: rotate(0deg)
 	}
+
 	100% {
 		transform: rotate(360deg)
 	}

@@ -1,9 +1,18 @@
+*{
+	box-sizing: border-box;
+}
+
 body {
 	background-color: #c4b893;
 }
 
 p {
 	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
 
 button {
@@ -43,14 +52,6 @@ button:active {
 	border: none;
 }
 
-.updateButton:hover {
-	background-color: #74b7ee;
-}
-
-.deleteButton:hover {
-	background-color: #ff5050;
-}
-
 .createButton:hover,
 .searchButton:hover,
 .sortButton:hover {
@@ -65,8 +66,7 @@ button:active {
 }
 
 .app {
-	width: fit-content;
-	min-width: 700px;
+	width: 700px;
 	min-height: calc(100vh - 90px);
 	margin: 20px auto;
 	background-color: #cabf98;
@@ -86,20 +86,13 @@ button:active {
 }
 
 .todo-item {
-	position: relative;
 	font-size: 1.1em;
 	border-bottom: 1px solid #a89c74;
 	margin-bottom: 3px;
 	padding-bottom: 3px;
-	display: flex;
-	justify-content: space-between;
-}
-
-.btnBox {
-	position: absolute;
-	right: 0;
-	display: flex;
-	gap: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .loader {
@@ -122,4 +115,70 @@ button:active {
 	100% {
 		transform: rotate(360deg)
 	}
+}
+
+.task-page-wrapper {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.task-page {
+	width: 100%;
+	max-width: 500px;
+	min-height: 250px;
+	border: 1px solid #000;
+	border-radius: 14px;
+	background-color: #cabf98;
+	padding: 15px;
+	text-align: center;
+}
+
+.task-return-button {
+	border-radius: 40%;
+	background-color: #f39547;
+	width: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1/1;
+}
+
+.task-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.task-btn-box {
+	display: flex;
+	gap: 5px;
+}
+
+.task-edit-button:hover {
+	background-color: #74b7ee;
+}
+
+.task-delete-button:hover {
+	background-color: #e93f3f;
+}
+
+
+
+.error {
+	max-width: fit-content;
+	margin: 30vh auto;
+	text-align: center;
+}
+
+.home-button {
+	display: block;
+	border: 1px solid #000;
+	border-radius: 7px;
+	padding: 3px 5px;
+	margin-top: 20px;
+	font-size: 20px;
 }

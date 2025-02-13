@@ -1,0 +1,16 @@
+.item {
+	position: relative;
+	font-size: 1.1em;
+	border-bottom: 1px solid #a89c74;
+	margin-bottom: 3px;
+	padding-bottom: 3px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn-box {
+	position: absolute;
+	right: 0;
+	display: flex;
+	gap: 5px;
+}

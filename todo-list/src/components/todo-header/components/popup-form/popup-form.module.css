@@ -1,0 +1,22 @@
+.wrapper {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	z-index: 100;
+	backdrop-filter: blur(5px);
+}
+
+.form {
+	margin-top: 25vh;
+	width: 400px;
+	height: 250px;
+	border: 1px solid #000;
+	background-color: #c4b893;
+	border-radius: 14px;
+	display: flex;
+	flex-direction: column;
+}

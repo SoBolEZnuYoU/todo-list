@@ -1,0 +1,24 @@
+import { use } from 'react'
+
+import { TodoAppContext } from '../../../../context/context'
+
+import styles from './search-button.module.css'
+
+export const SearchButton = () => {
+	const { formIsOpenFlag, setFormIsOpenFlag, setRequestValue, setInputValue } = use(TodoAppContext)
+
+	return (
+		<button className={styles.btn} type="button" onClick={() => {
+			setInputValue('')
+			setFormIsOpenFlag(!formIsOpenFlag)
+			setRequestValue('search')
+		}}>
+			<svg width="30" height="30" viewBox="0 0 58 58">
+				<path
+					d="M6.49994 23.5509C6.49994 14.1621 14.1111 6.5509 23.4999 6.5509C32.8888 6.5509 40.4999 14.1621 40.4999 23.5509C40.4999 32.9397 32.8888 40.5509 23.4999 40.5509C14.1111 40.5509 6.49994 32.9397 6.49994 23.5509ZM23.4999 0.550903C10.7974 0.550903 0.499939 10.8484 0.499939 23.5509C0.499939 36.2535 10.7974 46.5509 23.4999 46.5509C28.4066 46.5509 32.9545 45.0144 36.6885 42.3964L50.6715 56.3793C52.2336 57.9414 54.7663 57.9414 56.3284 56.3793C57.8905 54.8172 57.8905 52.2846 56.3284 50.7225L42.3454 36.7395C44.9635 33.0054 46.4999 28.4576 46.4999 23.5509C46.4999 10.8484 36.2025 0.550903 23.4999 0.550903Z"
+					fill="black"
+				/>
+			</svg>
+		</button>
+	)
+}

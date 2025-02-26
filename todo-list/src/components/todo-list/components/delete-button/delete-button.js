@@ -1,16 +1,17 @@
-import { use } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { deleteTodo, setEditingId } from '../../../../actions'
 
 import styles from './delete-button.module.css'
 
-import { TodoAppContext } from '../../../../context/context'
-import { useRequestDeleteTodo } from '../../../../API/request-delete-todo'
-
 export const DeleteButton = ({id}) => {
-	const { refreshFlag, setRefreshFlag } = use(TodoAppContext)
-	const deleteTodo = useRequestDeleteTodo(id, refreshFlag, setRefreshFlag)
+	const dispatch = useDispatch()
 
 	return (
-		<button className={styles.btn} type="button" onClick={deleteTodo}>
+		<button className={styles.btn} type="button" onClick={() => {
+			dispatch(setEditingId(id))
+			dispatch(deleteTodo(id))
+			}}>
 			x
 		</button>
 	)

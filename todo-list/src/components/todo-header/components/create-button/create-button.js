@@ -1,20 +1,17 @@
-import { use } from 'react'
-
+import { useDispatch } from 'react-redux'
+import { setFormIsOpenFlag, setFormAction } from '../../../../actions'
 import styles from './create-button.module.css'
 
-import { TodoAppContext } from '../../../../context/context'
-
 export const CreateButton = () => {
-	const { formIsOpenFlag, setFormIsOpenFlag, setRequestValue, setInputValue } = use(TodoAppContext)
+	const dispatch = useDispatch()
 
 	return (
 		<button
 			className={styles.btn}
 			type="button"
 			onClick={() => {
-				setInputValue('')
-				setRequestValue('post')
-				setFormIsOpenFlag(!formIsOpenFlag)
+				dispatch(setFormIsOpenFlag(true))
+				dispatch(setFormAction('POST'))
 			}}
 		>
 			+

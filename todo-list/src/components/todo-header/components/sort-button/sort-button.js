@@ -1,28 +1,22 @@
-import { use } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { sortTodos, getTodos } from '../../../../actions'
 
 import styles from './sort-button.module.css'
 
-import { TodoAppContext } from '../../../../context/context'
-import { sortTodos } from '../../../../utils/utils'
-
 export const SortButton = () => {
-	const { todos, setTodos, sortingTodos, setSortingTodos, refreshFlag, setRefreshFlag } =
-		use(TodoAppContext)
+	const dispatch = useDispatch()
+	const todos = useSelector((state) => state.todos)
+	const sortingFlag = useSelector((state) => state.sortingTodosFlag)
 
 	return (
 		<button
 			className={styles.btn}
 			type="button"
-			onClick={() =>
-				sortTodos(
-					todos,
-					setTodos,
-					sortingTodos,
-					setSortingTodos,
-					refreshFlag,
-					setRefreshFlag,
-				)
-			}
+			onClick={() => {
+				!sortingFlag ? dispatch(sortTodos(todos)) : dispatch(getTodos())
+
+				dispatch({ type: 'SET_SORTING_TODOS_FLAG' })
+			}}
 		>
 			А-я
 		</button>

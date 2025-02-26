@@ -1,17 +1,15 @@
-import { use } from 'react'
-
-import { TodoAppContext } from '../../../../context/context'
+import { useDispatch } from 'react-redux'
+import { setFormIsOpenFlag, setFormAction } from '../../../../actions'
 
 import styles from './search-button.module.css'
 
 export const SearchButton = () => {
-	const { formIsOpenFlag, setFormIsOpenFlag, setRequestValue, setInputValue } = use(TodoAppContext)
+	const dispatch = useDispatch()
 
 	return (
 		<button className={styles.btn} type="button" onClick={() => {
-			setInputValue('')
-			setFormIsOpenFlag(!formIsOpenFlag)
-			setRequestValue('search')
+			dispatch(setFormIsOpenFlag(true))
+			dispatch(setFormAction('SEARCH'))
 		}}>
 			<svg width="30" height="30" viewBox="0 0 58 58">
 				<path

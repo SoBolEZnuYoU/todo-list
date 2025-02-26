@@ -1,17 +1,14 @@
-import {TodoHeader, TodoList} from './components'
-
-import { TodoAppProvider } from './context/todo-app-provider'
+import {TodoHeader, TodoList, PopupForm} from './components'
 
 import styles from './todo-app.module.css'
 
 export const TodoApp = () => {
 
 	return (
-		<TodoAppProvider>
 				<div className={styles.app}>
+					<PopupForm />
 					<TodoHeader />
 					<TodoList />
 				</div>
-		</TodoAppProvider>
 	)
 }

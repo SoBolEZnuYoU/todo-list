@@ -1,12 +1,12 @@
-import { use } from 'react'
+import { useSelector } from 'react-redux'
 
-import { TodoAppContext } from '../../context/context'
 import { ListItem, EditButton, DeleteButton, Loader } from './components'
 
 import styles from './todo-list.module.css'
 
 export const TodoList = () => {
-	const { todos, isLoading } = use(TodoAppContext)
+	const todos = useSelector((state) => state.todos)
+	const isLoading = useSelector((state) => state.isLoading)
 
 	return (
 		<>

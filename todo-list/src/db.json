@@ -1,28 +1,24 @@
 {
   "todos": [
     {
-      "title": "Абобус",
+      "title": "a",
       "id": 1
     },
     {
-      "title": "нураф",
+      "title": "b",
       "id": 2
     },
     {
-      "title": "простыня",
+      "title": "A",
       "id": 3
     },
     {
-      "title": "азбука",
+      "title": "c",
       "id": 4
     },
     {
-      "title": "gagssdg",
+      "title": "D",
       "id": 5
-    },
-    {
-      "title": "fhsdhsf",
-      "id": 6
     }
   ]
 }

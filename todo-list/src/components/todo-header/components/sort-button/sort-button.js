@@ -1,12 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { sortTodos, getTodos } from '../../../../actions'
+import { selectTodos, selectSortingTodosFlag } from '../../../../selectors'
 
 import styles from './sort-button.module.css'
 
 export const SortButton = () => {
 	const dispatch = useDispatch()
-	const todos = useSelector((state) => state.todos)
-	const sortingFlag = useSelector((state) => state.sortingTodosFlag)
+	const todos = useSelector((state) => selectTodos(state))
+	const sortingFlag = useSelector((state) => selectSortingTodosFlag(state))
 
 	return (
 		<button

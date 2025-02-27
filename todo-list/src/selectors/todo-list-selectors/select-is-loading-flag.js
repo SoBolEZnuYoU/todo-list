@@ -1,0 +1,1 @@
+export const selectIsLoadingFlag = (state) => state.todoListState.isLoadingFlag

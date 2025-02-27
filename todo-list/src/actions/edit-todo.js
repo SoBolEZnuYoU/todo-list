@@ -6,6 +6,5 @@ export const editTodo = (id, text, todos) => (dispatch) =>
 		const todoIndex = todos.findIndex((item) => item.id === response.id)
 		const newTodos = [...todos]
 		newTodos[todoIndex] = response
-
 		dispatch({ type: 'EDIT_TODO', payload: newTodos })
 	})

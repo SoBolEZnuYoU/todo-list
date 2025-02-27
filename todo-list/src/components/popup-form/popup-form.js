@@ -1,16 +1,29 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { Input, Buttons } from './components'
-import { postTodo, editTodo, searchTodo, setSearchTodosFlag } from '../../actions'
+import {
+	postTodo,
+	editTodo,
+	searchTodo,
+	setSearchTodosFlag,
+	setInputValue,
+} from '../../actions'
+import {
+	selectFormIsOpenFlag,
+	selectFormAction,
+	selectInputValue,
+	selectEditingId,
+	selectTodos,
+} from '../../selectors'
 import styles from './popup-form.module.css'
 
 export const PopupForm = () => {
 	const dispatch = useDispatch()
 
-	const formIsOpenFlag = useSelector((state) => state.formIsOpenFlag)
-	const formAction = useSelector((state) => state.formAction)
-	const inputValue = useSelector((state) => state.inputValue)
-	const editingId = useSelector((state) => state.editingId)
-	const todos = useSelector((state) => state.todos)
+	const formIsOpenFlag = useSelector((state) => selectFormIsOpenFlag(state))
+	const formAction = useSelector((state) => selectFormAction(state))
+	const inputValue = useSelector((state) => selectInputValue(state))
+	const editingId = useSelector((state) => selectEditingId(state))
+	const todos = useSelector((state) => selectTodos(state))
 
 	return (
 		<div
@@ -36,6 +49,7 @@ export const PopupForm = () => {
 						default:
 							return
 					}
+					dispatch(setInputValue(''))
 				}}
 			>
 				<Input />

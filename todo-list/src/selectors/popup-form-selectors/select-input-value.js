@@ -1,0 +1,1 @@
+export const selectInputValue = (state) => state.popupFormState.inputValue

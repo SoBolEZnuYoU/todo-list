@@ -1,0 +1,1 @@
+export const selectEditingId = (state) => state.todoListState.editingId

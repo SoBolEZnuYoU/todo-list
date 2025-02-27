@@ -1,0 +1,1 @@
+export const selectFormAction = (state) => state.popupFormState.formAction

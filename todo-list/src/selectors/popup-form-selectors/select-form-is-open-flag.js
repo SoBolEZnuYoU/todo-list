@@ -1,0 +1,1 @@
+export const selectFormIsOpenFlag = (state) => state.popupFormState.formIsOpenFlag

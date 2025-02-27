@@ -1,12 +1,13 @@
 import { useSelector } from 'react-redux'
 
 import { ListItem, EditButton, DeleteButton, Loader } from './components'
+import { selectTodos, selectIsLoadingFlag } from '../../selectors'
 
 import styles from './todo-list.module.css'
 
 export const TodoList = () => {
-	const todos = useSelector((state) => state.todos)
-	const isLoading = useSelector((state) => state.isLoading)
+	const todos = useSelector((state) => selectTodos(state))
+	const isLoading = useSelector((state) => selectIsLoadingFlag(state))
 
 	return (
 		<>
